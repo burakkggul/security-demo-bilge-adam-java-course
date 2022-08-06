@@ -21,7 +21,7 @@ public class TokenManager {
         return Jwts.builder()
                 .setSubject(username)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + (this.expireMinutes * 60*100)))
+                .setExpiration(new Date(System.currentTimeMillis() + (this.expireMinutes * 60*1000)))
                 .signWith(SignatureAlgorithm.HS512,this.secretKey)
                 .compact();
     }
