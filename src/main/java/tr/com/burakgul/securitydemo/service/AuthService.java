@@ -44,7 +44,7 @@ public class AuthService {
         }
     }
 
-    public UserDTO signUp(@RequestBody UserDTO userDTO){
+    public UserDTO signUp(UserDTO userDTO){
         try {
             User user = this.modelMapper.map(userDTO,User.class);
             user.setPassword(this.bCryptPasswordEncoder.encode(userDTO.getPassword()));
